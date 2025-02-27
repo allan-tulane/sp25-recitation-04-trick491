@@ -38,6 +38,9 @@ To use this function to count words, you'll need to implement your own `map_f` a
 
 **Enter answer here**
 
+Work: O(n) 
+span: O(log n)
+
 
 5. Why are we going through all this trouble? Couldn't I just use this function to count words?
 
@@ -53,7 +56,7 @@ for doc in docs:
 What is the problem that prevents us from easily parallelizing this solution?
 
 **Enter answer here**
-
+When multiple threads try to update the shared counts dictionary concurrently, they may read and write the same key simultaneously, creating data conflicts between threads and leading to incorrect counts. 
 
 ## Part 2: Sentiment analysis
 
